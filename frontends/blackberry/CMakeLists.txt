@@ -8,12 +8,14 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 # Instruct CMake to run moc automatically when needed.
 set(CMAKE_AUTOMOC ON)
 
+find_package(BBMultimedia REQUIRED)
 find_package(BBCascades REQUIRED)
 
 include_directories(
     ${QT_INCLUDES}
     ${CMAKE_CURRENT_BINARY_DIR} 
     ${CMAKE_CURRENT_SOURCE_DIR}
+    ${BBMULTIMEDIA_INCLUDE_DIR}
     ${BBCASCADES_INCLUDE_DIR}
 )
 
@@ -31,5 +33,6 @@ target_link_libraries(
     mrdangaplayer
 
     ${QT_QTCORE_LIBRARY}
+    ${BBMULTIMEDIA_LIBRARY}
     ${BBCASCADES_LIBRARY}
 )
