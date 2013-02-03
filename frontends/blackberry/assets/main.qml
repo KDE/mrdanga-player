@@ -1,119 +1,147 @@
-/******************************************************************************
- * This file is part of the MrdangaPlayer project
- * Copyright (c) 2013 Laszlo Papp <lpapp@kde.org>
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- */
-
+// Tabbed Pane project template
 import bb.cascades 1.0
+import bb.multimedia 1.0
 
 Page {
-
-    // Dock Container is the way to hold overlapping controls with
-    // Cascades, at least for now. There is no 'z' index support establish
-    // by Cascades QML either.
-
     Container {
-        id: overlappingControlsContainer
-
-        preferredWidth: 768.0
-        preferredHeight: 1180.0
-
-        layout: DockLayout {
+        layout: AbsoluteLayout {
         }
 
-        verticalAlignment: VerticalAlignment.Top
-        horizontalAlignment: HorizontalAlignment.Left
+        background: "asset:///images/background.png"
 
-        ScrollView {
-            id: gerritScrollView
+        ImageButton {
+            id: tablac
 
-            scrollViewProperties {
-                pinchToZoomEnabled: true
-                scrollMode: ScrollMode.Both
+            layoutProperties: AbsoluteLayoutProperties {
+                positionX: 175
+                positionY: 85
             }
 
-            verticalAlignment: VerticalAlignment.Fill
-            visible: false
-
-            WebView {
-                id: gerritWebView
-
-                url: "https://codereview.qt-project.org/"
-                visible: true
-
-                settings.viewport: {
-                    // "width" : "device-width"
-                    // "height": "devide-height"
-                    // defaultFontSize: searchModel.fontSize
-                    "initial-scale" : 1.0
-                }
-                
-                onLoadingChanged: {
-                    if (loadRequest.status == WebLoadStatus.Started) {
-                        activityIndicator.start();
-                        gerritScrollView.visible = false
-                    }
-                    else if (loadRequest.status == WebLoadStatus.Succeeded) {
-                        gerritScrollView.visible = true
-                        activityIndicator.stop();
-                    }
-                    else if (loadRequest.status == WebLoadStatus.Failed) {
-                        activityIndicator.stop();
-                    }
-                }
+            onClicked: {
+                mrdangaMediaPlayer.setSourceUrl("asset:///sounds/chat.wav")
+                mrdangaMediaPlayer.play()
             }
 
-            gestureHandlers: [
-                DoubleTapHandler {
-                    onDoubleTapped: {
-                        gerritScrollView.resetViewableArea();
-                    }
-                }
-            ]
-        }
-
-
-        // This is necessary to place the activity indicator horizontally
-        // and vertically in the middle
-
-        Container {
-            id: activityIndicatorContainer
-
-            layout: StackLayout {    
-            }   
-
-            horizontalAlignment: HorizontalAlignment.Center
             verticalAlignment: VerticalAlignment.Center
+            horizontalAlignment: HorizontalAlignment.Center
 
-            ActivityIndicator {
-                id: activityIndicator
+            defaultImageSource: ""
+            pressedImageSource: "asset:///images/chat.png"
+            disabledImageSource: ""
 
-                minWidth: 200.0
-                minHeight: 200.0
+            overlapTouchPolicy: OverlapTouchPolicy.Allow
 
-                onStarted: {
-                    activityIndicator.visible = true
-                    gerritScrollView.visible = false
-                }   
+            //    scalingMethod: ScalingMethod.AspectFit
+        }
 
-                onStopped: {
-                    activityIndicatorContainer.visible = false
-                    gerritScrollView.visible = true
-                }   
-            }   
-        }   
+        ImageButton {
+            id: bayanMadianImageButton
+
+            layoutProperties: AbsoluteLayoutProperties {
+                positionX: 225
+                positionY: 137
+            }
+
+            onClicked: {
+                mrdangaMediaPlayer.setSourceUrl("asset:///sounds/bayan-maidan.wav")
+                mrdangaMediaPlayer.play()
+            }
+
+            verticalAlignment: VerticalAlignment.Center
+            horizontalAlignment: HorizontalAlignment.Center
+
+            defaultImageSource: ""
+            pressedImageSource: "asset:///images/bayan-madian.png"
+            disabledImageSource: ""
+
+            overlapTouchPolicy: OverlapTouchPolicy.Allow
+
+            //    scalingMethod: ScalingMethod.AspectFit
+        }
+
+        ImageButton {
+            id: bayanSyahiImageButton
+            
+            layoutProperties: AbsoluteLayoutProperties {
+                positionX: 270
+                positionY: 182
+            }
+
+            onClicked: {
+                mrdangaMediaPlayer.setSourceUrl("asset:///sounds/bayan-syahi.wav")
+                mrdangaMediaPlayer.play()
+            }
+
+            verticalAlignment: VerticalAlignment.Center
+            horizontalAlignment: HorizontalAlignment.Center
+
+            defaultImageSource: ""
+            pressedImageSource: "asset:///images/bayan-syahi.png"
+            disabledImageSource: ""
+
+            overlapTouchPolicy: OverlapTouchPolicy.Allow
+
+            //    scalingMethod: ScalingMethod.AspectFit
+        }
+
+        ImageButton {
+           id: dayanMadianImageButton
+
+           layoutProperties: AbsoluteLayoutProperties {
+               positionX: 160
+               positionY: 615
+           }
+
+           onClicked: {
+              mrdangaMediaPlayer.setSourceUrl("asset:///sounds/dayan-madian.wav")
+              mrdangaMediaPlayer.play()
+           }
+                                     
+           verticalAlignment: VerticalAlignment.Center
+           horizontalAlignment: HorizontalAlignment.Center
+
+           defaultImageSource: ""
+           pressedImageSource: "asset:///images/dayan-madian.png"
+           disabledImageSource: ""
+
+           overlapTouchPolicy: OverlapTouchPolicy.Allow
+
+           //    scalingMethod: ScalingMethod.AspectFit
+        }
+
+        ImageButton {
+            id: dayanSyahiImageButton
+                                        
+            verticalAlignment: VerticalAlignment.Center
+            horizontalAlignment: HorizontalAlignment.Center
+
+            defaultImageSource: ""
+            pressedImageSource: "asset:///images/dayan-syahi.png"
+            disabledImageSource: ""
+
+            overlapTouchPolicy: OverlapTouchPolicy.Allow
+
+            //    scalingMethod: ScalingMethod.AspectFit
+            //
+            onClicked: {
+                mrdangaMediaPlayer.setSourceUrl("asset:///sounds/dayan-syahi.wav")
+                mrdangaMediaPlayer.play()
+            }
+        
+        } 
+    } 
+
+    attachedObjects: [       
+        SystemSound {
+            id: systemSound
+        },
+
+        MediaPlayer {
+            id: mrdangaMediaPlayer
+        }
+    ]        
+                 
+    onCreationCompleted: {
+        OrientationSupport.supportedDisplayOrientation = SupportedDisplayOrientation.All;
     }
 }
