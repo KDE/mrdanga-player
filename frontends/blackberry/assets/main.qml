@@ -8,7 +8,14 @@ Page {
             orientation: LayoutOrientation.LeftToRight
         }   
 
-        background: "asset:///images/background.png"
+        background: back.imagePaint
+        attachedObjects: [
+            ImagePaintDefinition {
+                id: back
+                repeatPattern: RepeatPattern.XY
+                imageSource: "asset:///images/background.png"
+            }
+        ]
 
         ImageButton {
             id: bayanMadianImageButton
@@ -18,9 +25,11 @@ Page {
                 positionY: 137
             }
 
-            onClicked: {
-                mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ge.mp3")
-                mrdangaMediaPlayer.play()
+            onTouch: {
+                if (event.isDown()) {
+                    mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ge.mp3")
+                    mrdangaMediaPlayer.play()
+                }
             }
 
             verticalAlignment: VerticalAlignment.Center
@@ -43,9 +52,11 @@ Page {
                 positionY: 182
             }
 
-            onClicked: {
-                mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ki.mp3")
-                mrdangaMediaPlayer.play()
+            onTouch: {
+                if (event.isDown()) {
+                    mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ki.mp3")
+                    mrdangaMediaPlayer.play()
+                }
             }
 
             verticalAlignment: VerticalAlignment.Center
@@ -68,9 +79,11 @@ Page {
                positionY: 615
            }
 
-           onClicked: {
-              mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ta.mp3")
-              mrdangaMediaPlayer.play()
+           onTouch: {
+              if (event.isDown()) {
+                  mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ta.mp3")
+                  mrdangaMediaPlayer.play()
+              }
            }
                                      
            verticalAlignment: VerticalAlignment.Center
@@ -99,9 +112,11 @@ Page {
 
             //    scalingMethod: ScalingMethod.AspectFit
             //
-            onClicked: {
-                mrdangaMediaPlayer.setSourceUrl("asset:///sounds/dayan-syahi.wav")
-                mrdangaMediaPlayer.play()
+            onTouch: {
+                if (event.isDown()) {
+                    mrdangaMediaPlayer.setSourceUrl("asset:///sounds/dayan-syahi.wav")
+                    mrdangaMediaPlayer.play()
+                }
             }
         
         } */ 
