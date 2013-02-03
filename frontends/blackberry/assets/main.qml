@@ -27,7 +27,7 @@ Page {
 
             onTouch: {
                 if (event.isDown()) {
-                    mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ge.mp3")
+                    mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ki.ogg")
                     mrdangaMediaPlayer.play()
                 }
             }
@@ -52,7 +52,7 @@ Page {
 
             onTouch: {
                 if (event.isDown()) {
-                    mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ki.mp3")
+                    mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ge.ogg")
                     mrdangaMediaPlayer.play()
                 }
             }
@@ -77,7 +77,7 @@ Page {
 
            onTouch: {
               if (event.isDown()) {
-                  mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ta.mp3")
+                  mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ta.ogg")
                   mrdangaMediaPlayer.play()
               }
            }
@@ -106,7 +106,7 @@ Page {
 
             onTouch: {
                 if (event.isDown()) {
-                    mrdangaMediaPlayer.setSourceUrl("asset:///sounds/dayan-syahi.wav")
+                    mrdangaMediaPlayer.setSourceUrl("asset:///sounds/dayan-syahi.ogg")
                     mrdangaMediaPlayer.play()
                 }
             }
