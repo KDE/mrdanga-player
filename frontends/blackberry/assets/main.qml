@@ -4,8 +4,9 @@ import bb.multimedia 1.0
 
 Page {
     Container {
-        layout: AbsoluteLayout {
-        }
+        layout: StackLayout {
+            orientation: LayoutOrientation.LeftToRight
+        }   
 
         background: "asset:///images/background.png"
 
