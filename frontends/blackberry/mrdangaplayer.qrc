@@ -3,13 +3,18 @@
 
         <file>assets/main.qml</file>
 
-        <file>assets/bayan.png</file>
-        <file>assets/bayan-pressed.png</file>
+        <file>assets/images/bayan.png</file>
+        <file>assets/images/bayan-pressed.png</file>
 
-        <file>assets/dayan.png</file>
-        <file>assets/dayan-pressed.png</file>
+        <file>assets/sounds/ki.mp3</file>
+        <file>assets/sounds/ge.mp3</file>
 
-        <file>assets/share.png</file>
+        <file>assets/images/dayan.png</file>
+        <file>assets/images/dayan-pressed.png</file>
+
+        <file>assets/sounds/ta.mp3</file>
+
+        <file>assets/images/share.png</file>
 
     </qresource>
 </RCC>
