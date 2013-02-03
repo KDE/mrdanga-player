@@ -3,6 +3,8 @@
 
         <file>assets/main.qml</file>
 
+        <file>assets/images/background.png</file>
+
         <file>assets/images/bayan.png</file>
         <file>assets/images/bayan-pressed.png</file>
 
