@@ -7,7 +7,8 @@
     <initialWindow>
         <systemChrome>none</systemChrome>
         <transparent>false</transparent>
-        <autoOrients>true</autoOrients>
+        <aspectRatio>landscape</aspectRatio>
+        <autoOrients>false</autoOrients>
     </initialWindow>
     <icon>
         <image>mrdangaplayer114.png</image>
@@ -27,8 +28,11 @@
     </configuration>
 
     <asset path="assets/mrdangaplayer114.png">mrdangaplayer114.png</asset>
-    <asset path="assets">assets</asset>
+    <asset path="assets/images/splashscreen.jpg">splashscreen.jpg</asset>
+
+    <splashscreen>splashscreen.jpg</splashscreen>
     
+    <asset path="assets">assets</asset>
     <asset path="assets" dest="assets">
         <exclude name="**/*.qml"/>
     </asset>

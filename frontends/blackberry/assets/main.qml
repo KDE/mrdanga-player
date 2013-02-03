@@ -3,10 +3,36 @@ import bb.cascades 1.0
 import bb.multimedia 1.0
 
 Page {
+    attachedObjects: [       
+        MediaPlayer {
+            id: bayanMaidanMrdangaMediaPlayer
+            sourceUrl: "asset:///sounds/ki.ogg"
+        },
+
+        MediaPlayer {
+            id: bayanSyahiMrdangaMediaPlayer
+            sourceUrl: "asset:///sounds/ge.ogg"
+        },
+
+        MediaPlayer {
+            id: dayanMaidanMrdangaMediaPlayer
+            sourceUrl: "asset:///sounds/ta.ogg"
+        },
+
+        MediaPlayer {
+            id: dayanSyahiMrdangaMediaPlayer
+            // sourceUrl: "asset:///sounds/dayan-syahi.ogg"
+        }
+    ]        
+                 
+    onCreationCompleted: {
+        OrientationSupport.supportedDisplayOrientation = SupportedDisplayOrientation.All;
+    }
+
     Container {
         layout: StackLayout {
             orientation: LayoutOrientation.LeftToRight
-        }   
+        }
 
         background: back.imagePaint
         attachedObjects: [
@@ -27,8 +53,7 @@ Page {
 
             onTouch: {
                 if (event.isDown()) {
-                    mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ki.ogg")
-                    mrdangaMediaPlayer.play()
+                    bayanMaidanMrdangaMediaPlayer.play()
                 }
             }
 
@@ -52,8 +77,7 @@ Page {
 
             onTouch: {
                 if (event.isDown()) {
-                    mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ge.ogg")
-                    mrdangaMediaPlayer.play()
+                    bayanSyahiMrdangaMediaPlayer.play()
                 }
             }
 
@@ -77,8 +101,7 @@ Page {
 
            onTouch: {
               if (event.isDown()) {
-                  mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ta.ogg")
-                  mrdangaMediaPlayer.play()
+                  dayanMaidanMrdangaMediaPlayer.play()
               }
            }
                                      
@@ -106,21 +129,10 @@ Page {
 
             onTouch: {
                 if (event.isDown()) {
-                    mrdangaMediaPlayer.setSourceUrl("asset:///sounds/dayan-syahi.ogg")
-                    mrdangaMediaPlayer.play()
+                    dayanSyahiMrdangaMediaPlayer.play()
                 }
             }
         
         } */ 
     } 
-
-    attachedObjects: [       
-        MediaPlayer {
-            id: mrdangaMediaPlayer
-        }
-    ]        
-                 
-    onCreationCompleted: {
-        OrientationSupport.supportedDisplayOrientation = SupportedDisplayOrientation.All;
-    }
 }
