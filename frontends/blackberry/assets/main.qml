@@ -10,31 +10,6 @@ Page {
         background: "asset:///images/background.png"
 
         ImageButton {
-            id: tablac
-
-            layoutProperties: AbsoluteLayoutProperties {
-                positionX: 175
-                positionY: 85
-            }
-
-            onClicked: {
-                mrdangaMediaPlayer.setSourceUrl("asset:///sounds/chat.wav")
-                mrdangaMediaPlayer.play()
-            }
-
-            verticalAlignment: VerticalAlignment.Center
-            horizontalAlignment: HorizontalAlignment.Center
-
-            defaultImageSource: ""
-            pressedImageSource: "asset:///images/chat.png"
-            disabledImageSource: ""
-
-            overlapTouchPolicy: OverlapTouchPolicy.Allow
-
-            //    scalingMethod: ScalingMethod.AspectFit
-        }
-
-        ImageButton {
             id: bayanMadianImageButton
 
             layoutProperties: AbsoluteLayoutProperties {
@@ -43,15 +18,15 @@ Page {
             }
 
             onClicked: {
-                mrdangaMediaPlayer.setSourceUrl("asset:///sounds/bayan-maidan.wav")
+                mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ge.mp3")
                 mrdangaMediaPlayer.play()
             }
 
             verticalAlignment: VerticalAlignment.Center
             horizontalAlignment: HorizontalAlignment.Center
 
-            defaultImageSource: ""
-            pressedImageSource: "asset:///images/bayan-madian.png"
+            defaultImageSource: "asset:///images/bayan.png"
+            pressedImageSource: "asset:///images/bayan-pressed.png"
             disabledImageSource: ""
 
             overlapTouchPolicy: OverlapTouchPolicy.Allow
@@ -59,7 +34,7 @@ Page {
             //    scalingMethod: ScalingMethod.AspectFit
         }
 
-        ImageButton {
+        /* ImageButton {
             id: bayanSyahiImageButton
             
             layoutProperties: AbsoluteLayoutProperties {
@@ -68,7 +43,7 @@ Page {
             }
 
             onClicked: {
-                mrdangaMediaPlayer.setSourceUrl("asset:///sounds/bayan-syahi.wav")
+                mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ki.mp3")
                 mrdangaMediaPlayer.play()
             }
 
@@ -82,7 +57,7 @@ Page {
             overlapTouchPolicy: OverlapTouchPolicy.Allow
 
             //    scalingMethod: ScalingMethod.AspectFit
-        }
+        } */
 
         ImageButton {
            id: dayanMadianImageButton
@@ -93,15 +68,15 @@ Page {
            }
 
            onClicked: {
-              mrdangaMediaPlayer.setSourceUrl("asset:///sounds/dayan-madian.wav")
+              mrdangaMediaPlayer.setSourceUrl("asset:///sounds/ta.mp3")
               mrdangaMediaPlayer.play()
            }
                                      
            verticalAlignment: VerticalAlignment.Center
            horizontalAlignment: HorizontalAlignment.Center
 
-           defaultImageSource: ""
-           pressedImageSource: "asset:///images/dayan-madian.png"
+           defaultImageSource: "asset:///images/dayan.png"
+           pressedImageSource: "asset:///images/dayan-pressed.png"
            disabledImageSource: ""
 
            overlapTouchPolicy: OverlapTouchPolicy.Allow
@@ -109,7 +84,7 @@ Page {
            //    scalingMethod: ScalingMethod.AspectFit
         }
 
-        ImageButton {
+        /* ImageButton {
             id: dayanSyahiImageButton
                                         
             verticalAlignment: VerticalAlignment.Center
@@ -128,7 +103,7 @@ Page {
                 mrdangaMediaPlayer.play()
             }
         
-        } 
+        } */ 
     } 
 
     attachedObjects: [       
