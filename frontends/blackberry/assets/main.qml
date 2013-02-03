@@ -40,8 +40,6 @@ Page {
             disabledImageSource: ""
 
             overlapTouchPolicy: OverlapTouchPolicy.Allow
-
-            //    scalingMethod: ScalingMethod.AspectFit
         }
 
         /* ImageButton {
@@ -67,8 +65,6 @@ Page {
             disabledImageSource: ""
 
             overlapTouchPolicy: OverlapTouchPolicy.Allow
-
-            //    scalingMethod: ScalingMethod.AspectFit
         } */
 
         ImageButton {
@@ -94,8 +90,6 @@ Page {
            disabledImageSource: ""
 
            overlapTouchPolicy: OverlapTouchPolicy.Allow
-
-           //    scalingMethod: ScalingMethod.AspectFit
         }
 
         /* ImageButton {
@@ -110,8 +104,6 @@ Page {
 
             overlapTouchPolicy: OverlapTouchPolicy.Allow
 
-            //    scalingMethod: ScalingMethod.AspectFit
-            //
             onTouch: {
                 if (event.isDown()) {
                     mrdangaMediaPlayer.setSourceUrl("asset:///sounds/dayan-syahi.wav")
@@ -123,10 +115,6 @@ Page {
     } 
 
     attachedObjects: [       
-        SystemSound {
-            id: systemSound
-        },
-
         MediaPlayer {
             id: mrdangaMediaPlayer
         }
