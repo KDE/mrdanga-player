@@ -39,7 +39,7 @@ Page {
             ImagePaintDefinition {
                 id: back
                 repeatPattern: RepeatPattern.XY
-                imageSource: "asset:///images/background.png"
+                imageSource: "asset:///images/background.jpg"
             }
         ]
 
