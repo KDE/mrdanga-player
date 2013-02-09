@@ -46,6 +46,12 @@ Page {
         ImageButton {
             id: bayanMadianImageButton
 
+            attachedObjects: [
+                LayoutUpdateHandler {
+                    id: bayanMadianImageButtonLayoutUpdateHandler
+                }
+            ]
+
             layoutProperties: AbsoluteLayoutProperties {
                 positionX: 225
                 positionY: 137
@@ -53,14 +59,29 @@ Page {
 
             onTouch: {
                 if (event.isDown()) {
-                    bayanMaidanMrdangaMediaPlayer.play()
+                    var localOriginX = bayanMadianImageButtonLayoutUpdateHandler.layoutFrame.width/2
+                    var localOriginY = bayanMadianImageButtonLayoutUpdateHandler.layoutFrame.height/2
+
+                    var innerCircleRadius = bayanMadianImageButtonLayoutUpdateHandler.layoutFrame.width * 0.3
+                    var outerCircleRadius = bayanMadianImageButtonLayoutUpdateHandler.layoutFrame.width * 0.4
+
+                    var localEventDistanceSquareFromOriginX = (event.localX - localOriginX) * (event.localX - localOriginX)
+                    var localEventDistanceSquareFromOriginY = (event.localY - localOriginY) * (event.localY - localOriginY)
+
+                    if (localEventDistanceSquareFromOriginX +
+                        localEventDistanceSquareFromOriginY < (innerCircleRadius * innerCircleRadius)) {
+                        bayanMaidanMrdangaMediaPlayer.play()
+                    } else if (localEventDistanceSquareFromOriginX +
+                        localEventDistanceSquareFromOriginY < (outerCircleRadius * outerCircleRadius)) {
+                        bayanSyahiMrdangaMediaPlayer.play()
+                    }
                 }
             }
 
             verticalAlignment: VerticalAlignment.Center
             horizontalAlignment: HorizontalAlignment.Center
 
-            defaultImageSource: "asset:///images/bayan.png"
+            defaultImageSource: "asset:///images/bayan-pressed.png"
             pressedImageSource: "asset:///images/bayan-pressed.png"
             disabledImageSource: ""
 
@@ -101,7 +122,8 @@ Page {
 
            onTouch: {
               if (event.isDown()) {
-                  dayanMaidanMrdangaMediaPlayer.play()
+                  if (event.isDown()) {
+                  }
               }
            }
                                      
