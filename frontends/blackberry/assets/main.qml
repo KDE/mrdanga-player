@@ -44,26 +44,27 @@ Page {
         ]
 
         ImageButton {
-            id: bayanMadianImageButton
+            id: bayanImageButton
+
+            verticalAlignment: VerticalAlignment.Center
+            horizontalAlignment: HorizontalAlignment.Center
+
+            defaultImageSource: "asset:///images/bayan.png"
+            pressedImageSource: "asset:///images/bayan-pressed.png"
 
             attachedObjects: [
                 LayoutUpdateHandler {
-                    id: bayanMadianImageButtonLayoutUpdateHandler
+                    id: bayanImageButtonLayoutUpdateHandler
                 }
             ]
 
-            layoutProperties: AbsoluteLayoutProperties {
-                positionX: 225
-                positionY: 137
-            }
-
             onTouch: {
                 if (event.isDown()) {
-                    var localOriginX = bayanMadianImageButtonLayoutUpdateHandler.layoutFrame.width/2
-                    var localOriginY = bayanMadianImageButtonLayoutUpdateHandler.layoutFrame.height/2
+                    var localOriginX = bayanImageButtonLayoutUpdateHandler.layoutFrame.width/2
+                    var localOriginY = bayanImageButtonLayoutUpdateHandler.layoutFrame.height/2
 
-                    var innerCircleRadius = bayanMadianImageButtonLayoutUpdateHandler.layoutFrame.width * 0.3
-                    var outerCircleRadius = bayanMadianImageButtonLayoutUpdateHandler.layoutFrame.width * 0.4
+                    var innerCircleRadius = bayanImageButtonLayoutUpdateHandler.layoutFrame.width * 0.3
+                    var outerCircleRadius = bayanImageButtonLayoutUpdateHandler.layoutFrame.width * 0.4
 
                     var localEventDistanceSquareFromOriginX = (event.localX - localOriginX) * (event.localX - localOriginX)
                     var localEventDistanceSquareFromOriginY = (event.localY - localOriginY) * (event.localY - localOriginY)
@@ -77,84 +78,24 @@ Page {
                     }
                 }
             }
-
-            verticalAlignment: VerticalAlignment.Center
-            horizontalAlignment: HorizontalAlignment.Center
-
-            defaultImageSource: "asset:///images/bayan-pressed.png"
-            pressedImageSource: "asset:///images/bayan-pressed.png"
-            disabledImageSource: ""
-
-            overlapTouchPolicy: OverlapTouchPolicy.Allow
         }
-
-        /* ImageButton {
-            id: bayanSyahiImageButton
-            
-            layoutProperties: AbsoluteLayoutProperties {
-                positionX: 270
-                positionY: 182
-            }
-
-            onTouch: {
-                if (event.isDown()) {
-                    bayanSyahiMrdangaMediaPlayer.play()
-                }
-            }
-
-            verticalAlignment: VerticalAlignment.Center
-            horizontalAlignment: HorizontalAlignment.Center
-
-            defaultImageSource: ""
-            pressedImageSource: "asset:///images/bayan-syahi.png"
-            disabledImageSource: ""
-
-            overlapTouchPolicy: OverlapTouchPolicy.Allow
-        } */
 
         ImageButton {
            id: dayanMadianImageButton
-
-           layoutProperties: AbsoluteLayoutProperties {
-               positionX: 160
-               positionY: 615
-           }
-
-           onTouch: {
-              if (event.isDown()) {
-                  if (event.isDown()) {
-                  }
-              }
-           }
                                      
            verticalAlignment: VerticalAlignment.Center
            horizontalAlignment: HorizontalAlignment.Center
 
            defaultImageSource: "asset:///images/dayan.png"
            pressedImageSource: "asset:///images/dayan-pressed.png"
-           disabledImageSource: ""
 
-           overlapTouchPolicy: OverlapTouchPolicy.Allow
+           onTouch: {
+              if (event.isDown()) {
+                  if (event.isDown()) {
+                      dayanMaidanMrdangaMediaPlayer.play()
+                  }
+              }
+           }
         }
-
-        /* ImageButton {
-            id: dayanSyahiImageButton
-                                        
-            verticalAlignment: VerticalAlignment.Center
-            horizontalAlignment: HorizontalAlignment.Center
-
-            defaultImageSource: ""
-            pressedImageSource: "asset:///images/dayan-syahi.png"
-            disabledImageSource: ""
-
-            overlapTouchPolicy: OverlapTouchPolicy.Allow
-
-            onTouch: {
-                if (event.isDown()) {
-                    dayanSyahiMrdangaMediaPlayer.play()
-                }
-            }
-        
-        } */ 
     } 
 }
