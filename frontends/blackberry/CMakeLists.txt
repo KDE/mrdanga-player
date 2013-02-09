@@ -23,9 +23,9 @@ set(MrdangaPlayer_SRCS
     main.cpp
 )
 
-QT4_ADD_RESOURCES(MrdangaPlayer_RCC_SRCS
-    mrdangaplayer.qrc
-)
+# QT4_ADD_RESOURCES(MrdangaPlayer_RCC_SRCS
+#     mrdangaplayer.qrc
+# )
 
 add_executable(mrdangaplayer ${MrdangaPlayer_SRCS} ${MrdangaPlayer_RCC_SRCS})
 
