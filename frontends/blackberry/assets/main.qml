@@ -63,17 +63,17 @@ Page {
                     var localOriginX = bayanImageButtonLayoutUpdateHandler.layoutFrame.width/2
                     var localOriginY = bayanImageButtonLayoutUpdateHandler.layoutFrame.height/2
 
-                    var innerCircleRadius = bayanImageButtonLayoutUpdateHandler.layoutFrame.width * 0.3
-                    var outerCircleRadius = bayanImageButtonLayoutUpdateHandler.layoutFrame.width * 0.4
+                    var innerCircleRadius = bayanImageButtonLayoutUpdateHandler.layoutFrame.width/4
+                    var outerCircleRadius = bayanImageButtonLayoutUpdateHandler.layoutFrame.width/2
 
                     var localEventDistanceSquareFromOriginX = (event.localX - localOriginX) * (event.localX - localOriginX)
                     var localEventDistanceSquareFromOriginY = (event.localY - localOriginY) * (event.localY - localOriginY)
 
                     if (localEventDistanceSquareFromOriginX +
-                        localEventDistanceSquareFromOriginY < (innerCircleRadius * innerCircleRadius)) {
+                        localEventDistanceSquareFromOriginY <= (innerCircleRadius * innerCircleRadius)) {
                         bayanMaidanMrdangaMediaPlayer.play()
                     } else if (localEventDistanceSquareFromOriginX +
-                        localEventDistanceSquareFromOriginY < (outerCircleRadius * outerCircleRadius)) {
+                        localEventDistanceSquareFromOriginY <= (outerCircleRadius * outerCircleRadius)) {
                         bayanSyahiMrdangaMediaPlayer.play()
                     }
                 }
