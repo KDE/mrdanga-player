@@ -91,9 +91,7 @@ Page {
 
            onTouch: {
               if (event.isDown()) {
-                  if (event.isDown()) {
-                      dayanMaidanMrdangaMediaPlayer.play()
-                  }
+                  dayanMaidanMrdangaMediaPlayer.play()
               }
            }
         }
